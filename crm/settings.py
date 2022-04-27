@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-k^89tvdtjd4k8#%z3_712y9ge&*%ms3949y!gv8(40+8qoz)*%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'local host',
+    '127.0.0.1',
+
+]
 
 # Application definition
 
@@ -85,10 +89,10 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'crm2_db',
-        'USER': 'postgres',
-        'PASSWORD': 'DinkoHristov',
-        'HOST': '127.0.0.1',
+        'NAME': 'd6jj4uo3gr4k43',
+        'USER': 'extcwmwfpnhfdg',
+        'PASSWORD': '164452472adbb7b3430089b300b426b2a61c65eb112c875d4c9072301e6fffd8',
+        'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }

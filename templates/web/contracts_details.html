@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Account Manager: {{ request.user.username }}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Contract ID</th>
+                            <th>Contract Date</th>
+                            <th>Contract Expiration Date</th>
+                            <th>Annual Consumption</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for contract in account_contracts %}
+                            <td>
+                                    <a href="{% url 'customer details' contract.customer_id %}">{{ contract.customer }}</a>
+                                </td>
+                            {% for customer in account_customers %}
+
+
+                                {% if contract.customer_id == customer.id %}
+                                    <td>{{ contract.id }}</td>
+                                    <td>{{ contract.contract_date }}</td>
+                                    <td>{{ contract.contract_expiration }}</td>
+                                    <td>{{ contract.annual_consumption }}</td>
+                                    <td>{{ contract.price }}</td>
+                                {% endif %}
+                            {% endfor %}
+
+
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

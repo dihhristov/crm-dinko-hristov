@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="d-inline p-2 w-50">
+            <div class="d-flex flex-column">
+                <h5><u>Име:</u> {{ customer.customer_name }}</h5>
+                <h5><u>ЕИК:</u> {{ customer.eic }}</h5>
+                <h5><u>Град:</u> {{ customer.city }}</h5>
+                <h5><u>Адрес:</u> {{ customer.address }}</h5>
+                <h5>
+                    <u>Представляващ:</u> {{ customer.representative_first_name }} {{ customer.representative_last_name }}
+                </h5>
+                <a href="{% url 'edit customer' customer.id %}" class="btn btn-primary">Edit Customer</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

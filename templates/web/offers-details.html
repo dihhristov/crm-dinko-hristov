@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Account Manager: {{ request.user.username }}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>OfferID</th>
+                            <th>Offer Date</th>
+                            <th>Offer Expiration Date</th>
+                            <th>Annual Quantity</th>
+                            <th>Offered Price</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            {% for offer in account_offers %}
+                                {% for customer in account_customers %}
+                                    {% if offer.customer_id == customer.id %}
+                                        <td>
+                                            <a href="{% url 'customer details' offer.customer_id %}">{{ customer.customer_name }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'edit offer' offer.id %}"> {{ offer.id }}</a>
+                                        </td>
+                                        <td>{{ offer.offer_date }}</td>
+                                        <td>{{ offer.offer_validity }}</td>
+                                        <td>{{ offer.offered_quantity }}</td>
+                                        <td>{{ offer.offer_price|floatformat:2 }}</td>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

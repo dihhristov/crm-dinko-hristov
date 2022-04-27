@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'local host',
     '127.0.0.1',
-
+    'crm-dinko-hristov.herokuapp.com',
 ]
 
 # Application definition

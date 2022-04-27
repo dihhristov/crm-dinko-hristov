@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath crm crm.wasgi
+web: gunicorn --pythonpath crm crm.wsgi

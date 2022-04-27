@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd6jj4uo3gr4k43',
-        'USER': 'extcwmwfpnhfdg',
-        'PASSWORD': '164452472adbb7b3430089b300b426b2a61c65eb112c875d4c9072301e6fffd8',
-        'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
+        'NAME': 'dbrianaorml9cn',
+        'USER': 'asxbscyjvbhhrp',
+        'PASSWORD': 'de255e4ad71af6a290d53517b395f2d9d238fe62f5efabf9bf01771916a78f49',
+        'HOST': 'ec2-52-48-159-67.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
